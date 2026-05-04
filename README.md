@@ -273,19 +273,19 @@ Postman
 ## Prints do Sistema Funcionando
 
 ### 1. Listar Cidades
-![alt text](image.png)
+![Listar Cidades](prints/01-listar-cidades.png)
 
 ### 2. Temperatura Atual
-![alt text](image-1.png)
+![Temperatura Atual](prints/02-temperatura.png)
 
 ### 3. Previsão 5 Dias
-![alt text](image-2.png)
+![Previsão 5 Dias](prints/03-previsao.png)
 
 ### 4. Estatísticas Climáticas
-![alt text](image-3.png)
+![Estatísticas Climáticas](prints/04-estatisticas.png)
 
 ### 5. Cadastrar Nova Cidade
-![alt text](image-4.png)
+![Cadastrar Nova Cidade](prints/05-cadastrar.png)
 ---
 
 ## Tecnologias Utilizadas
