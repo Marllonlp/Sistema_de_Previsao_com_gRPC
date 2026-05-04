@@ -1,0 +1,67 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.weather.grpc";
+option java_outer_classname = "WeatherProto";
+
+package weather;
+
+service WeatherService {
+  rpc GetTemperaturaAtual(CidadeRequest) returns (TemperaturaResponse);
+  rpc GetPrevisaoCincoDias(CidadeRequest) returns (PrevisaoResponse);
+  rpc ListarCidades(Empty) returns (CidadesListResponse);
+  rpc CadastrarCidade(CadastrarCidadeRequest) returns (CidadeResponse);
+  rpc GetEstatisticasClimaticas(CidadeRequest) returns (EstatisticasResponse);
+}
+
+message Empty {
+}
+
+message CidadeRequest {
+  string nome = 1;
+}
+
+message TemperaturaResponse {
+  string cidade = 1;
+  float temperatura = 2;
+  string condicao = 3;
+  int32 umidade = 4;
+}
+
+message PrevisaoResponse {
+  string cidade = 1;
+  repeated PrevisaoDia previsoes = 2;
+}
+
+message PrevisaoDia {
+  string data = 1;
+  float temperaturaMaxima = 2;
+  float temperaturaMinima = 3;
+  string condicao = 4;
+  int32 probabilidadeChuva = 5;
+}
+
+message CadastrarCidadeRequest {
+  string nome = 1;
+  float temperatura = 2;
+}
+
+message CidadeResponse {
+  bool sucesso = 1;
+  string mensagem = 2;
+  string cidade = 3;
+}
+
+message CidadesListResponse {
+  repeated string cidades = 1;
+  int32 total = 2;
+}
+
+message EstatisticasResponse {
+  string cidade = 1;
+  float temperaturaMedia = 2;
+  float temperaturaMinima = 3;
+  float temperaturaMaxima = 4;
+  int32 diasComChuva = 5;
+  int32 diasSemChuva = 6;
+}

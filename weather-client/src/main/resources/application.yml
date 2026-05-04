@@ -1,0 +1,15 @@
+server:
+  port: 8080
+
+grpc:
+  client:
+    weather-server:
+      address: static://localhost:9090
+      negotiation-type: plaintext
+
+spring:
+  application:
+    name: weather-client
+  output:
+    ansi:
+      enabled: always
